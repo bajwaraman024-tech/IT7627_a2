@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module bowling_game</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">bowling_game</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Cit7627_a2%5Cbowling_game.py">d:\it7627_a2\bowling_game.py</a></td></tr></table>
+    <p><span class="code">Bowling&nbsp;Game&nbsp;Implementation<br>
+A&nbsp;module&nbsp;for&nbsp;calculating&nbsp;bowling&nbsp;game&nbsp;scores.<br>
+&nbsp;<br>
+This&nbsp;module&nbsp;implements&nbsp;the&nbsp;scoring&nbsp;engine&nbsp;for&nbsp;a&nbsp;standard&nbsp;ten-pin<br>
+bowling&nbsp;game,&nbsp;including&nbsp;open&nbsp;frames,&nbsp;spares,&nbsp;strikes,&nbsp;and&nbsp;the<br>
+special&nbsp;two/three-ball&nbsp;bonus&nbsp;rules&nbsp;for&nbsp;the&nbsp;tenth&nbsp;frame.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="bowling_game.html#BowlingGame">BowlingGame</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="BowlingGame">class <strong>BowlingGame</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Records&nbsp;rolls&nbsp;for&nbsp;a&nbsp;single&nbsp;game&nbsp;and&nbsp;calculates&nbsp;the&nbsp;final&nbsp;score.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;game&nbsp;=&nbsp;<a href="#BowlingGame">BowlingGame</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;for&nbsp;_&nbsp;in&nbsp;range(20):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.<a href="#BowlingGame-roll">roll</a>(0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;game.<a href="#BowlingGame-score">score</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="BowlingGame-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Initialize&nbsp;a&nbsp;new&nbsp;game&nbsp;with&nbsp;no&nbsp;rolls&nbsp;recorded&nbsp;yet.</span></dd></dl>
+
+<dl><dt><a name="BowlingGame-roll"><strong>roll</strong></a>(self, pins)</dt><dd><span class="code">Record&nbsp;the&nbsp;number&nbsp;of&nbsp;pins&nbsp;knocked&nbsp;down&nbsp;by&nbsp;one&nbsp;roll.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pins&nbsp;(int):&nbsp;Number&nbsp;of&nbsp;pins&nbsp;knocked&nbsp;down,&nbsp;0-10&nbsp;inclusive.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TypeError:&nbsp;If&nbsp;pins&nbsp;is&nbsp;not&nbsp;an&nbsp;integer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;pins&nbsp;is&nbsp;outside&nbsp;the&nbsp;0-10&nbsp;range.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;game&nbsp;=&nbsp;<a href="#BowlingGame">BowlingGame</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;game.<a href="#BowlingGame-roll">roll</a>(5)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;game.<a href="#BowlingGame-roll">roll</a>(11)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;pins&nbsp;must&nbsp;be&nbsp;between&nbsp;0&nbsp;and&nbsp;10.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;game.<a href="#BowlingGame-roll">roll</a>(-1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;pins&nbsp;must&nbsp;be&nbsp;between&nbsp;0&nbsp;and&nbsp;10.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;game.<a href="#BowlingGame-roll">roll</a>("five")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TypeError:&nbsp;pins&nbsp;must&nbsp;be&nbsp;an&nbsp;integer.</span></dd></dl>
+
+<dl><dt><a name="BowlingGame-score"><strong>score</strong></a>(self)</dt><dd><span class="code">Calculate&nbsp;the&nbsp;total&nbsp;score&nbsp;for&nbsp;a&nbsp;completed&nbsp;game.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;The&nbsp;final&nbsp;score,&nbsp;0-300.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;game&nbsp;=&nbsp;<a href="#BowlingGame">BowlingGame</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;for&nbsp;_&nbsp;in&nbsp;range(12):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.<a href="#BowlingGame-roll">roll</a>(10)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;game.<a href="#BowlingGame-score">score</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;300</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>MAX_PINS</strong> = 10<br>
+<strong>NUMBER_OF_FRAMES</strong> = 10</td></tr></table>
+</body></html>
